@@ -64,6 +64,14 @@ You can create a Text node using one of it's constructors and manipulate its pro
 Text("Hello, world!\nThis is some text!", FontKey("my font"), Material.Bitmap(AssetName("my font sheet"))).alignRight
 ```
 
+You can get a specific text color with [an overlay in a `Material.ImageEffects`](materials.md):
+
+```scala mdoc:silent
+Text("Hello, world!\nThis is some text!", FontKey("my font"),
+  Material.Bitmap(AssetName("my font sheet")).withOverlay(Fill.Color(RGBA.Blue))
+).alignRight
+```
+
 Easy enough, and note that you can use newlines ...but if indigo doesn't support fonts for `Text`, what is the `fontKey` in reference to?
 
 ### Allowing fonts without supporting fonts
